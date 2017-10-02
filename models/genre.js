@@ -3,17 +3,17 @@ var mongoose = require('mongoose');
 //Genre Schema
 var genreSchema = mongoose.Schema({
 	name:{
-		type: String.
+		type: String,
 		required: true
 	},
 
-	create_date{
+	create_date:{
 		type: Date,
-		default:Date.now;
+		default:Date.now
 	}
 })
 
-var Genre = module.exports = mogoose.model('Genre', genreSchema);
+var Genre = module.exports = mongoose.model('Genre', genreSchema);
 
 //Get Genres
 
