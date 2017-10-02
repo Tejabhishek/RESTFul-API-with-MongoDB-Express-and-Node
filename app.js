@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
+Genre = require('./models/genre')
 
 //Connect to Mongoose
 
@@ -16,6 +17,16 @@ app.get('/',function(req,res){
 
 });
 
+
+app.get('/api/genres',function(req,res){
+	Genre.getGenres(function(err,genres){
+		if(err){
+			throw err;
+		}
+		res.json(genres);
+	})
+
+});
 
 app.listen(3000);
 console.log("Running on port 3000..")
